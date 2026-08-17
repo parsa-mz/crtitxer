@@ -1,0 +1,40 @@
+[project]
+name = "critxer"
+version = "0.2.0"
+description = "Does a prior audit-repair episode in context change what an LLM verifier reports? A false-alarm study on ProcessBench."
+requires-python = ">=3.13"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+    "datasets>=3.0",
+    "numpy>=2.0",
+    "scipy>=1.14",
+    "httpx>=0.27",
+    "matplotlib>=3.9",
+    "pandas",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-xdist>=3.6", "ruff>=0.6"]
+
+[project.scripts]
+critxer = "critxer.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["critxer"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Flat layout
+pythonpath = ["."]
