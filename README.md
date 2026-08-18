@@ -1,5 +1,7 @@
 # critxer
 
+[![arXiv](https://img.shields.io/badge/arXiv-2608.16003-b31b1b.svg)](https://arxiv.org/abs/2608.16003)
+
 **Does a repair a model has already done change the next diagnosis it makes?**
 
 When a language model checks another model's reasoning, its context often already contains an
@@ -89,8 +91,27 @@ critxer/cli/run/         generation: talks to a served model, writes raw outputs
 critxer/cli/analyse/     reads those generations and writes contrasts. No inference.
 critxer/cli/make/        the arm allocation, the figures, the LaTeX tables
 critxer/cli/tools/       maintenance on artefacts that already exist
-tests/              402 tests, enforcing the prompt invariants the comparison rests on
+tests/              404 tests, enforcing the prompt invariants the comparison rests on
 ```
 
 Artefacts live under `$CRITXER_DATA` (default `./data`), uncommitted. Per-item probabilities and
 per-sample flags are kept, not aggregates, so every interval resamples items.
+
+## Paper
+
+**[Prior Audit–Repair Context Shifts LLM Verifier Thresholds Toward Leniency](https://arxiv.org/abs/2608.16003)**
+· Parsa Mazaheri, Kasra Mazaheri · arXiv:2608.16003
+
+## Citation
+
+```bibtex
+@misc{mazaheri2026prior,
+  title         = {Prior Audit--Repair Context Shifts LLM Verifier Thresholds Toward Leniency},
+  author        = {Mazaheri, Parsa and Mazaheri, Kasra},
+  year          = {2026},
+  eprint        = {2608.16003},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2608.16003}
+}
+```
